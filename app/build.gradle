@@ -22,7 +22,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -32,12 +32,13 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     // Schematic dependencies for ContentProvider
-    apt 'net.simonvt.schematic:schematic-compiler:0.6.3'
-    implementation 'net.simonvt.schematic:schematic:0.6.3'
+    apt 'net.simonvt.schematic:schematic-compiler:0.6.4'
+    implementation 'net.simonvt.schematic:schematic:0.6.4'
 
     // Preferences Dependencies
     implementation 'androidx.preference:preference:1.1.1'
 
+    implementation 'com.google.firebase:firebase-analytics:17.4.4'
     implementation 'com.google.firebase:firebase-messaging:20.2.3'
 
     // TODO (3) Add the Firebase libraries and apply the GPS plugin in this file. Make sure to save the
