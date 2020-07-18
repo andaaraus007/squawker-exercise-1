@@ -1,16 +1,22 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 29
+    buildToolsVersion '30.0.0'
     defaultConfig {
         applicationId "android.example.com.squawker"
         minSdkVersion 16
-        targetSdkVersion 30
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        defaultConfig {
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    includeCompileClasspath true
+                }
+            }
+        }
     }
     buildTypes {
         release {
@@ -32,7 +38,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     // Schematic dependencies for ContentProvider
-    apt 'net.simonvt.schematic:schematic-compiler:0.6.4'
+    implementation 'net.simonvt.schematic:schematic-compiler:0.6.4'
     implementation 'net.simonvt.schematic:schematic:0.6.4'
 
     // Preferences Dependencies
